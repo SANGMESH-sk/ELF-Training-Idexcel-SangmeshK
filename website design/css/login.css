@@ -1,0 +1,55 @@
+form{
+    border: 1px solid black;
+    width: 400px;
+    height: 500px;
+    margin: 20px 400px;
+    padding-left:25px;
+    text-align: center;
+    font-family: cursive;
+    background:linear-gradient(rgb(207, 226, 37),rgb(241, 6, 6));
+    border-radius: 5px;
+}
+   input[type="button"]{
+   padding: 7px 100px;
+   margin-top: 20px;
+   border-radius: 5px;
+   background:linear-gradient(rgb(87, 40, 107),rgb(9, 206, 35)) ;
+   margin-bottom: 20px;
+   border: none;
+
+   }
+   input[type="text"]{
+       text-align: center;
+       width: 250px;
+       margin-bottom: 30px;
+       margin-top: 10px;
+       border-radius: 5px;
+   }
+   input[type="password"]{
+    text-align: center;
+    width: 250px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+body{
+    background-image: linear-gradient(120deg,#09d9fd,#ec0abb)
+}
+#a{
+    background-color: rgb(73, 238, 31);
+}
+#a:hover{
+ 
+ background-color: rgb(223, 8, 19);
+}
+h2{
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+body{
+    background-image: url("/images/kosmus-2425886_960_720.jpg");
+    background-size: cover;
+    
+}
+input[type="button"]:hover{
+    background-color: rgb(13, 113, 226);
+}
