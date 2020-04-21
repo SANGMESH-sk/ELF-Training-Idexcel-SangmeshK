@@ -1,0 +1,40 @@
+form{
+    border: 1px solid black;
+    width: 470px;
+    height: 470px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 32px 200px;   
+}
+body{
+    background-color: rgb(199, 192, 192);
+}
+h3{
+    color: white;
+    margin: 40px 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+div{
+    margin: 20px 25px;
+}
+.name{
+    width: 376px;
+    padding:5px;
+    padding-left:10px;
+    margin-top: 7px;
+}
+input[type="button"]{
+   margin-left: 255px;
+   margin-top: 20px;
+   padding: 5px 10px;
+   background-color: green;
+   color: rgb(102, 187, 32);
+   border: 1px solid black;
+}
+#name{
+    margin-right: 15px;
+    padding:5px;
+    padding-left:10px;
+    
+}

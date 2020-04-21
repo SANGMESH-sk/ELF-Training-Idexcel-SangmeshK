@@ -1,0 +1,31 @@
+form{
+    border: 1px solid black;
+    background-color: rgb(129, 83, 235);
+    margin: 20px 40px;
+    width: 800px;
+    height: 670px;
+    font-size: 15px;
+}
+ div{
+    margin: 10px 10px;
+    color: white;    
+}
+label{
+    width: 200px;
+    display: inline-block;
+}
+table{
+    border: 1px solid black;
+    margin-left: 200px; 
+}
+input[type="button"]{
+    margin-top: 10px;
+    margin-left: 250px;
+}
+.color{
+    background-color: cornsilk;
+    padding-right: 130px;
+}
+#address{
+    padding:20px 30px;
+}

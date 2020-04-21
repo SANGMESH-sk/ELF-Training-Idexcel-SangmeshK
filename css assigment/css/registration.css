@@ -1,0 +1,38 @@
+body{
+    background-image:linear-gradient(to bottom right,rgb(110, 14, 98),rgb(30, 212, 236)) ;
+} 
+form{
+    border: 1px solid black;
+    width: 480px;
+    height: 550px;
+    background-color: rgb(22, 18, 36);
+    color: white;
+    margin-top: 50px;
+    margin-left: 380px;
+    padding-left: 40px;
+    border-radius: 5px;    
+}
+div{
+    padding-bottom: 25px;    
+}
+input[type="button"]{
+    margin-left: 300px;
+    margin-top: 30px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+h1{
+    margin-left: 60px;
+    margin-bottom: 40px;
+}
+.texter{
+    width: 400px;
+    padding: 8px;
+    border-radius: 5px;
+}
+label{
+    margin-left: 20px;
+}

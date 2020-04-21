@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(21, 34, 51);
+    margin: 20px 250px;
+}
+h1{
+    color: white;
+}
+.psw{
+    border: 1px solid rgb(12, 41, 41);
+    width: 820px;
+    height: 22px;
+    margin-top:15px;
+    margin-bottom: 20px;
+    background-color: rgb(26, 26, 27);
+    padding: 7px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.file{
+    color: white;
+}
+label{
+    color: white;
+    margin-top: 25px;
+    font-size: 20px;
+    color: white;
+}
+input[type="button"]{
+    background-color: rgb(7, 156, 194);
+    text-align: center;
+    width: 830px;
+    height: 30px;
+    color: white;
+    border: none;
+    margin-top: 20px;
+}

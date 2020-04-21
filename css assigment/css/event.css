@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(32, 51, 158);
+}
+form{
+    width: 550px;
+    height: 500px;
+    margin: 10px 400px;
+    padding-left: px;
+    background-color: white;
+    border-radius: 5px;
+}
+div{
+    margin: 20px;
+}
+input[type="text"]{
+    margin-left: 25px;
+    height: 22px;
+    background-color: rgb(179, 178, 164);
+    border-radius: 2px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.txt{
+     width: 371px;  
+}
+input[type="email"]{
+    margin-left:25px ;
+    background-color: rgb(179, 178, 164);;
+    padding: 5px 0px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+input[type="button"]{
+    background-color: red;
+    border: none;
+    padding: 5px 20px;
+    margin-top: 15px;
+    border-radius: 2px;
+    color: white;
+    margin-left: 28px;
+}
+h1{
+ background-color: black;
+ color: white;
+ padding: 10px 35px;
+ border-radius: 2px;
+}
+.abel{
+    width: 60px;
+    display: inline-block;
+    margin-left: 30px;
+}
+.content{
+    margin-left: 28px;
+}
+::placeholder{
+    color: rgb(10, 8, 8);
+    padding-left: 10px;
+}
