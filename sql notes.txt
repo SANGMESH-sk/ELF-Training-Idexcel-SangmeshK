@@ -1,0 +1,61 @@
+\l= it will access privileges of all the databases in the server
+
+\c=b it used for connecting the new database under user specified
+
+\d=shows table defination
+
+SELECT version(); = it tell the version 
+
+
+sql statements
+1.DDL
+create
+alter
+drop
+rename
+truncate
+
+2.DML
+insert 
+update
+delet
+
+3.DCL
+granmt 
+revoke
+
+4.TCL
+commit
+
+5.DQL
+select
+----------------------------------------------------------------------------------------
+
+DDL=IT helps us to define a structure
+create= create table person(id int,name varchar(150),email varchar(180)); it used for creating table
+
+alter= alter table person add column age;
+
+drop=drop database dname;
+example = drop database test;
+          drop table emp;
+
+rename=alter table table_name rename column_name to new_column_name
+
+database=CREATE DATABASE dbname;
+
+
+-----------------------------------------------------------------------------------------------
+
+DML= data manupaltion language
+
+insert=insert into table_name(column_name1,column_name2,column_name3,....column_name)
+values (value1,value2,value3....value n);
+ex;insert into person(id,name,email) values(1,san@gmail.com');
+
+------------------------------------------------------------------------
+
+
+
+
+
