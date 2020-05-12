@@ -1,0 +1,237 @@
+1. Write a command to check the version of postgreSQL.
+   select version(); 
+
+2. Write a command to get a list of all available databases.
+   \l
+
+4. Write a command to create a database.
+   create database db_name;
+   ex : create database idexcel_db;
+
+3. Write a command to use or switch to a particular database.
+   \c <database_name>
+   ex : \c idexcel1
+ 
+4. Write a command to create a table.
+   create table table_name (col_name1 datatype constraints,
+		            col_name2 datatype constraints,
+			    col_name3 datatype constraints,...
+			    col_namen datatype constraints);
+
+   ex : create table Employee( id int primary key,
+			       ename varchar(100),
+			       phoneno double precision,
+			       sal double precision);
+
+5.  Write a command to describe a particular table.
+    \d <table_name>
+	
+6.  \? = You can get the list of all the available commands.
+
+7. Write a query to insert a values to the table.
+   Insert into table (column1,column2,column3,....coulumnN) 
+	             values (value1,value2,value3...valueN);
+
+   ex:create table Employe( empid,ename,sal,,phoneno) values 
+		           (01,'name',25000,,8458300545);   
+
+8. Write a command to add new column to the existing table.
+   Syntax : alter table table_name add column new_col_name datatype;
+
+   ex: alter table Employee add age int;
+
+9. Write a command to change the column old_name to new_name
+   Syntax :   alter table table_name rename column col_name to new_col_name;
+
+   ex: alter table employe rename column ename to empname; 
+
+10. Write a command to rename the database name
+   alter database old_name rename to new_name
+
+    ex: alter database idexcel rename to idexcel1; 
+ 
+11. Write a command to rename the table name 
+     alter table old_name rename to new_name
+
+    ex: alter table employee rename to employe;
+
+12. WAQ to drop(delete) a particular column
+    Syntax :  alter table table_name drop column_name
+
+    ex: alter table newtable drop age;
+
+13. WAQ to drop(delete) a table
+    Syntax : drop table table_name;
+
+    drop table newtable;
+
+14. WAQ to display ename,departmentno and hiredate.
+    select ename,deptno,hiredate from employee;
+
+15. WAQ to display ename. 
+    select ename from employee;
+
+16. WAQ to display all the elements in a table.
+    select * from employee;
+
+17. update : update tab_name set col_name=value;
+    delete : delete from tab_name;
+
+18. Where clause : used to filter records.
+
+19. Order of excuetion :
+	From
+	where : row by row will execute and it check with the conditions given and filter out the results. 
+	select
+
+20. WAQ to update salary whose id is 1.
+    update employee set sal=25000 where empid=1;
+
+21. Delete from employee where empid=10;
+
+22. WAQ to insert 2 values in a same query? 
+insert into employe values(11,'ravi','softeare engineer','2009-01-12                                ,25000,24,'ravi@gmail.com',10,895456232);
+(12,'pooja','softeare developer','2008-01-12'
+,30000,26,'pooja@gmail.com',20,8953559232);
+
+====================================================================================================
+
+23.  WAQ to delete a record whose id is 12
+ans:   delete from employee where empid=12;PESPE
+
+OPERATOR:
+1.ARITHAMATIC OPERATOR 
+2.COMPARISON OPERATOR
+3.LOGICAL OPERATOR
+4.SPECIAL OPERATOR
+
+alias 
+
+Syntax : Select col_name as alias_name from table_name as alias_name;
+	 Select col_name alias_name from table_name alias_name;  
+	
+24) WAQ to change a columnname as job title for temporary.
+ans:select designation as job_title from employe;
+	
+25) WAQ to obtain emp name with his current salary and new salary with a hike of 5%
+ans : select ename,sal,(sal+(Sal*25/100)) as Hike from employe;
+
+26) WAQ to display all the emp records incremented with 500 rs each employee
+
+ans: select ename,sal,sal+500 as Hike from employe;
+ 
+27) WAQ to display all the emp records decremented with 500 rs each employee
+ans: select ename,sal,sal-500 as dec from employe;
+
+28) WAQ to display name,salary and annual sal of all the employee
+ ans:select ename,sal,salary*12 as Annual from employe;
+
+29) WAQ to display per day salary of the employee
+ ans: select ename,sal,sal/21 as Day_Sal from employe;
+========================================================================================
+
+	Distinct - Used to get the unique values from the column or table.
+ 	Syntax : Select DISTINCT col_name from Table_name;
+
+	Comparision operator:  =,>,<,>=,<=,!=,<>  
+	
+30)WAQ to display all the records of the employee who are working in the dept is equal to 10.
+ans: select * from employee where deptno=10;
+	
+31)WAQ to display all the records of the employee whose salary is greater 20000;
+ans: select * from employee where sal>20000;
+
+32) WAQ to display all the records of the employee whose salary less than 20000;
+ans:select * from employee where sal<20000;
+
+
+33)WAQ to display all the records of the employee whose salaryis not equal 20000;
+ans: select * from employee where sal!=20000;
+
+========================================================================================================
+	Logical operator : 
+        AND
+        OR
+        NOT
+	
+	AND : Syntax = Select col_name/* from table_name where condition 1 AND condition 2.
+	OR  : Syntax = Select col_name/* from table_name where conditon 1 OR condition 2.
+	NOT : Syntax = Select col_name/* from table_name where NOT condition.
+
+34)WAQ to display all the records whose is working as hr and deptno 10. 
+ans:select * from employee where designation='HR' and deptno=10;
+	
+35)  WAQ to display all the records of the employee whose is working as salesman and hired after      2016
+ans:select * from employee where designation='salesman' and hiredate>'2016-12-31';
+	
+36) WAQ to display all the records of the emp who is working as HR in deptno 10 & whose salary is 10000
+ans: select * from employee where designation='HR' and deptno=10 and sal>10000;
+	
+37)WAQ to display all the records of the emp who is working in dept 10 or 20. 
+ans: select * from employee where deptno=10 or deptno=20;
+
+38) WAQ to display name salary deptno who is working as tester or whose salary = 15000;
+ans:select ename,salary,deptno from employee where designation='Tester' or sal=15000;
+
+39)WAQ to display all the records whose is working as tester as working in dept in 30 or working as clerk as well as whose sal>15000;
+
+ans:Select * from employee where (designation='Tester' and deptno=30) or (designation='clerk' and sal>15000);
+	
+40)WAQ to display all the records who are not working in the deptno 20.
+ans:select * from employee where not deptno=20;
+=======================================================================================================	
+41)SPECIAL OPERATOR:
+ IN,
+ NOTIN,
+ BETWEEN,
+ IS
+ LIKE
+ 
+  IN OPERATOR:
+ SYNTAX: select * from table_name where column_name IN (value1,value2,value3...value n);
+ 
+ 42) WAQ TO DISPLAY all the record of the employe who is working as salesman,clerk and tester?  
+ ans: select * from employe where designation IN('salesman','clerk','tester');
+
+  NOTIN OPERATOR:
+  SYNTAX: select * from table_name where column_name NOTIN (value1,value2,value3...value n);
+ 
+ 43)WAQ TO DISPLAY all the record of the employe who is NOT working as salesman,clerk and tester?  
+ ans: select * from employe where designation NOTIN('salesman','clerk','tester');
+
+ BETWEEN OPERATOR:
+    SYNTAX: select * from table_name where column_name BETWEEN value1 and value2;
+ 44) WAQ TO display all the record of the employe whose salary is within 20000 to 40000
+ ans: select * from employe where sal BETWEEN 20000 and 40000;
+
+ 45)WAQ TO display all the record of the employe is working in deptno 10 and 20 of their annnua salary b/w 30000 to 40000?
+ ans: 
+ select * from employe where deptno IN(10,20) AND sal*12 BETWEEN 40000 AND 50000;
+
+ 
+ like operator: it use for pattern matching
+ %: it reprents one or multiple characters
+ _: it help us identify size  it represents single character:
+
+ SYNTAX:SELECT * FROM TABLE_NAME WHERE COLUMN_NAME LIKE '%'/'_';
+
+ 46) WAQ to display all the records of the employe whos name start with r?
+ans: select * from employe where ename like 'r%';
+
+ 47)WAQ to display only 3 character?
+ans:select * from employe where ename like '___';
+
+ 48) WAQ to display all the record of the employe who has atleast 2L IN their name?
+ans: select * from employe where ename like '%l%l%';
+
+ 49)WAQ TO display all the record whose name start with s and end with t?
+ ans: select * from employe where ename like 's%t';
+
+ 50)WAQ TO display all the record of the employee whose name length=5 and starting name with s and end with 2nd last character L?
+ ans: select * from employe where ename like 's__l_';
+ 
+ 51)WAQ TO display all the record of the employee whose name start with S or A 
+ ans: select * from employe where ename like's%' or ename like'a%';
+ 
+ 52)WAQ TO display all the record of the employee excluding whose name begins with Z&P?
+ ans: select * from employe where ename NOT like'z%' or ename NOT like'P%';
