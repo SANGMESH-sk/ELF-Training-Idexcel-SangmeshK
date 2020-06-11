@@ -1,0 +1,47 @@
+USE FUNCTIONS ONLY
+1. List employees whose name having 4 character
+ans: select * from employe where length(ename)= 4;
+
+2. List employees whose job is having 7 characters
+ans:select * from employe where length(designation)=7;
+
+3. Find out how many times letter 'S' occurs in 'qspiders'
+ans:
+
+4. List the employees whose job is having last 3 characters as 'man'
+select * from employe where substr(designation,-3,3)='man'
+
+5. List employees whose job is having first 3 characters as 'man'.
+ans: select * from employe where substr(designation,1,3)='man';
+
+6. Display all the names whose name is having exactly 1 'L'
+ans: select * from employe where instr(ename,l,1,1)>0;
+
+7. Display dept names which are having letter 'O'
+ans: select *  from employe where instr(dname,'o',1,1)>0;
+
+8. Display the output as shown below,
+   Scott working as a clerk earns 3000 in dept 20
+9. Calculate number of L in string 'HELLLLL'
+ans:  select length('HELLLLL')-length(replace('HELLLLL','L')) no_of_L from dual;
+10. Display all the employees whose job has a string 'MAN'
+ans: select * from emp where instr(designation,'man',1)>0;
+
+11. Display all the employees whose job starts with string 'MAN'
+ans: select * from employe where substr(designation,1,3)='man';
+
+12. Display all the employees whose job ends with string 'MAN'
+ans: select * from employe where substr(designation,-3,3)='man';
+
+13. Display first 3 characters of ename in lower case and rest everything in upper case.
+If ename is 'QSPIDERS' then display  this as ‘qspIDERS’
+14. Display the result from emp table as below.
+
+SMITH is a CLERK and gets salary 2000 
+
+Here SMITH is ename column, CLERK is JOB and 2000 is SAL column and rest everything is literal strings.
+15.list the employees hired on a Wednesday
+ans: select ename from employe where to_char(hiredate,'dy')='wed';
+16.list the employees hired on a leap year
+17.list the employees hired on a Sunday in the month of may
+ans: select ename from employe to_char(hiredate,'mon')='may' and to_char(hiredate,'dy')='sun';
