@@ -1,0 +1,893 @@
+1. Write a command to check the version of postgreSQL.
+   select version(); 
+
+2. Write a command to get a list of all available databases.
+   \l
+
+4. Write a command to create a database.
+   create database db_name;
+   ex : create database idexcel_db;
+
+3. Write a command to use or switch to a particular database.
+   \c <database_name>
+   ex : \c idexcel1
+ 
+4. Write a command to create a table.
+   create table table_name (col_name1 datatype constraints,
+		            col_name2 datatype constraints,
+			    col_name3 datatype constraints,...
+			    col_namen datatype constraints);
+
+   ex : create table Employee( id int primary key,
+			       ename varchar(100),
+			       phoneno double precision,
+			       sal double precision);
+
+5.  Write a command to describe a particular table.
+    \d <table_name>
+	
+6.  \? = You can get the list of all the available commands.
+
+7. Write a query to insert a values to the table.
+   Insert into table (column1,column2,column3,....coulumnN) 
+	             values (value1,value2,value3...valueN);
+
+   ex:create table Employe( empid,ename,sal,,phoneno) values 
+		           (01,'name',25000,,8458300545);   
+
+8. Write a command to add new column to the existing table.
+   Syntax : alter table table_name add column new_col_name datatype;
+
+   ex: alter table Employee add age int;
+
+9. Write a command to change the column old_name to new_name
+   Syntax :   alter table table_name rename column col_name to new_col_name;
+
+   ex: alter table employe rename column ename to empname; 
+
+10. Write a command to rename the database name
+   alter database old_name rename to new_name
+
+    ex: alter database idexcel rename to idexcel1; 
+ 
+11. Write a command to rename the table name 
+     alter table old_name rename to new_name
+
+    ex: alter table employee rename to employe;
+
+12. WAQ to drop(delete) a particular column
+    Syntax :  alter table table_name drop column_name
+
+    ex: alter table newtable drop age;
+
+13. WAQ to drop(delete) a table
+    Syntax : drop table table_name;
+
+    drop table newtable;
+
+14. WAQ to display ename,departmentno and hiredate.
+    select ename,deptno,hiredate from employee;
+
+15. WAQ to display ename. 
+    select ename from employee;
+
+16. WAQ to display all the elements in a table.
+    select * from employee;
+
+17. update : update tab_name set col_name=value;
+    delete : delete from tab_name;
+
+18. Where clause : used to filter records.
+
+19. Order of excuetion :
+	From
+	where : row by row will execute and it check with the conditions given and filter out the results. 
+	select
+
+20. WAQ to update salary whose id is 1.
+    update employee set sal=25000 where empid=1;
+
+21. Delete from employee where empid=10;
+
+22. WAQ to insert 2 values in a same query? 
+insert into employe values(11,'ravi','softeare engineer','2009-01-12                                ,25000,24,'ravi@gmail.com',10,895456232);
+(12,'pooja','softeare developer','2008-01-12'
+,30000,26,'pooja@gmail.com',20,8953559232);
+
+====================================================================================================
+
+23.  WAQ to delete a record whose id is 12
+ans:   delete from employee where empid=12;PESPE
+
+OPERATOR:
+1.ARITHAMATIC OPERATOR 
+2.COMPARISON OPERATOR
+3.LOGICAL OPERATOR
+4.SPECIAL OPERATOR
+
+alias 
+
+Syntax : Select col_name as alias_name from table_name as alias_name;
+	 Select col_name alias_name from table_name alias_name;  
+	
+24) WAQ to change a columnname as job title for temporary.
+ans:select designation as job_title from employe;
+	
+25) WAQ to obtain emp name with his current salary and new salary with a hike of 5%
+ans : select ename,sal,(sal+(Sal*25/100)) as Hike from employe;
+
+26) WAQ to display all the emp records incremented with 500 rs each employee
+
+ans: select ename,sal,sal+500 as Hike from employe;
+ 
+27) WAQ to display all the emp records decremented with 500 rs each employee
+ans: select ename,sal,sal-500 as dec from employe;
+
+28) WAQ to display name,salary and annual sal of all the employee
+ ans:select ename,sal,salary*12 as Annual from employe;
+
+29) WAQ to display per day salary of the employee
+ ans: select ename,sal,sal/21 as Day_Sal from employe;
+========================================================================================
+
+	Distinct - Used to get the unique values from the column or table.
+ 	Syntax : Select DISTINCT col_name from Table_name;
+
+	Comparision operator:  =,>,<,>=,<=,!=,<>  
+	
+30)WAQ to display all the records of the employee who are working in the dept is equal to 10.
+ans: select * from employee where deptno=10;
+	
+31)WAQ to display all the records of the employee whose salary is greater 20000;
+ans: select * from employee where sal>20000;
+
+32) WAQ to display all the records of the employee whose salary less than 20000;
+ans:select * from employee where sal<20000;
+
+
+33)WAQ to display all the records of the employee whose salaryis not equal 20000;
+ans: select * from employee where sal!=20000;
+
+========================================================================================================
+	Logical operator : 
+        AND
+        OR
+        NOT
+	
+	AND : Syntax = Select col_name/* from table_name where condition 1 AND condition 2.
+	OR  : Syntax = Select col_name/* from table_name where conditon 1 OR condition 2.
+	NOT : Syntax = Select col_name/* from table_name where NOT condition.
+
+34)WAQ to display all the records whose is working as hr and deptno 10. 
+ans:select * from employee where designation='HR' and deptno=10;
+	
+35)  WAQ to display all the records of the employee whose is working as salesman and hired after      2016
+ans:select * from employee where designation='salesman' and hiredate>'2016-12-31';
+	
+36) WAQ to display all the records of the emp who is working as HR in deptno 10 & whose salary is 10000
+ans: select * from employee where designation='HR' and deptno=10 and sal>10000;
+	
+37)WAQ to display all the records of the emp who is working in dept 10 or 20. 
+ans: select * from employee where deptno=10 or deptno=20;
+
+38) WAQ to display name salary deptno who is working as tester or whose salary = 15000;
+ans:select ename,salary,deptno from employee where designation='Tester' or sal=15000;
+
+39)WAQ to display all the records whose is working as tester as working in dept in 30 or working as clerk as well as whose sal>15000;
+
+ans:Select * from employee where (designation='Tester' and deptno=30) or (designation='clerk' and sal>15000);
+	
+40)WAQ to display all the records who are not working in the deptno 20.
+ans:select * from employee where not deptno=20;
+=======================================================================================================	
+41)SPECIAL OPERATOR:
+ IN,
+ NOTIN,
+ BETWEEN,
+ IS
+ LIKE
+ 
+  IN OPERATOR:
+ SYNTAX: select * from table_name where column_name IN (value1,value2,value3...value n);
+ 
+ 42) WAQ TO DISPLAY all the record of the employe who is working as salesman,clerk and tester?  
+ ans: select * from employe where designation IN('salesman','clerk','tester');
+
+  NOTIN OPERATOR:
+  SYNTAX: select * from table_name where column_name NOTIN (value1,value2,value3...value n);
+ 
+ 43)WAQ TO DISPLAY all the record of the employe who is NOT working as salesman,clerk and tester?  
+ ans: select * from employe where designation NOTIN('salesman','clerk','tester');
+
+ BETWEEN OPERATOR:
+    SYNTAX: select * from table_name where column_name BETWEEN value1 and value2;
+ 44) WAQ TO display all the record of the employe whose salary is within 20000 to 40000
+ ans: select * from employe where sal BETWEEN 20000 and 40000;
+
+ 45)WAQ TO display all the record of the employe is working in deptno 10 and 20 of their annnua salary b/w 30000 to 40000?
+ ans: 
+ select * from employe where deptno IN(10,20) AND sal*12 BETWEEN 40000 AND 50000;
+
+ 
+ like operator: it use for pattern matching
+ %: it reprents one or multiple characters
+ _: it help us identify size  it represents single character:
+
+ SYNTAX:SELECT * FROM TABLE_NAME WHERE COLUMN_NAME LIKE '%'/'_';
+
+ 46) WAQ to display all the records of the employe whos name start with r?
+ans: select * from employe where ename like 'r%';
+
+ 47)WAQ to display only 3 character?
+ans:select * from employe where ename like '___';
+
+ 48) WAQ to display all the record of the employe who has atleast 2L IN their name?
+ans: select * from employe where ename like '%l%l%';
+
+ 49)WAQ TO display all the record whose name start with s and end with t?
+ ans: select * from employe where ename like 's%t';
+
+ 50)WAQ TO display all the record of the employee whose name length=5 and starting name with s and end with 2nd last character L?
+ ans: select * from employe where ename like 's__l_';
+ 
+ 51)WAQ TO display all the record of the employee whose name start with S or A 
+ ans: select * from employe where ename like's%' or ename like'a%';
+ 
+ 52)WAQ TO display all the record of the employee excluding whose name begins with Z&P?
+ ans: select * from employe where ename NOT like'z%' or ename NOT like'P%';
+
+
+=========================================================================================
+functions:
+avg: SYNTAX: SELECT AVG(SAL) FROM EMPLOYE;
+
+count: SYNTAX: SELECT COUNT(*) FROM EMPLOYE;
+
+max: syntax: select max(sal) minsal from employe;
+
+min(): syntax: select min(sal) minsal from employe;
+
+sum(): syntax: sum(sal) sumsal from employe;
+
+1.AVG()-Returns Average Value.
+Syntax-Select avg(column_name) from table_name;
+
+Q.53)W.A.Q to find the average salary of employee.
+Query -->Select avg(salary) from employee;
+
+2.COUNT()-It counts the no of rows.
+Syntax-Select count(*) from table_name;
+
+Q.54)W.A.Q to count the no of employees.
+Query -->select count(*) from employee;
+
+3.MAX()-Returns maximum value of the selected column.
+Syntax-Select max(column_name) from table_name;
+
+Q.55)W.A.Q to find who is getting maximum salary.
+Query -->Select max(salary) max_sal from employee;
+
+4.MIN()-Returns minimum value of the selected column.
+Syntax-Select min(column_name) from table_name;
+
+Q.56)W.A.Q to find who is getting minimum salary.
+Query -->Select mix(salary) min_sal from employee;
+
+5.SUM()-Returns sum of all the values of the selected column.
+Syntax-Select sum(column_name) from table_name;
+
+Q.57)W.A.Q to sum the salary of employee.
+Query -->select sum(sal) sumsal from employee;
+
+2.Scaler Function-Whenever we pass n no of input we get n no of output that is called as single row function
+or scalar function.(per input it will give output).
+=====================================================================================================
+
+
+order by: order by clause always execute ofter select clause
+order by clause should always the last clause it written in the query
+
+if the group by clause is used in order by we can use multirow function only for the column name or expreesion it used for 
+
+2.waq t d all the detail of employe and sort the record in dseending order and hiredate if their are more than employe hiredate on the same date and the highest salary should be shown first?
+ans: select * from employe order by hiredate desc, sal asc;
+
+3.waqtd the nme of the employe salary and anualsal and sort the record in descencding order of their annual salary
+
+4.waqtd name designation of all the employe who are working in either of their deptno 10,20 and sort the record in asc order by their sal
+ans: select ename,designation from employe where  deptno IN (10,20) order by sal asc;
+
+
+Order of excution-FROM
+                  WHERE
+		  SELECT
+		  ORDER BY
+
+Group By Clause
+It is a clause 
+
+Syntax-SELECT */Expression FROM table_name WHERE condition GROUP BY column_name;
+
+Order of execution-FROM
+                   WHERE
+		   GROUP BY
+		   SELECT
+				   
+Q.62)W.A.Q to display no of count of the employee working in each dept.
+Query -->select count(*) from employee group by deptno; 
+
+
+	 
+select count(*),deptno from employee gruop by deptno;
+
+
+NOTE-1.Group by clause execute row by row.
+2.After the execution of group by clause the records are grouped therefore all the clauses which execute
+after the execution of group by clause it will execute group by group.
+
+Q.63)W.A.Q to display the highest salary of employee in each dept.
+Query -->select max(salary) from employee group by deptno;
+
+Q.64)W.A.Q to display no of tester working in each dept.
+Query -->select count(*) from employee where designation='tester' group by deptno;
+
+HAVING CLAUSE-It is used to filter the group on the condition.
+
+NOTE-Having clause will be written and executed after group by clause.
+In having clause we can use only the column name that is used in group by clause.
+
+Syntax- Select * From table_name
+        Where (row_filter_condition)
+		group by column_name
+		having (group_filter_condition);
+
+Order of excution-FROM
+                  WHERE
+		  GROUP BY
+		  HAVING
+		  SELECT
+
+Q.65)W.A.Q to display the dept no which has atleast 2 clerks working.
+Query -->select deptno from employee where designation='clerk' group by deptno having count(*)>=2;
+
+Q.66)W.A.Q to display deptno which has total salary greater than 10000.
+Query -->select deptno from employee group by deptno having sum(salary)>10000;
+
+Q.67)W.A.Q to display deptno which has atleast 2 employee hired in to the same date.
+Query -->select deptno from employee group by hiredate,deptNo having count(*)>=2;
+
+Q.68)W.A.Q to display deptno and average salaryof all the dept whose average sal is greater than 15000 by excluding the employee whose name begins with 'r'.
+Query -->select deptno,avg(salary) from employee where ename not like 'R%' group by deptno having avg(salary)>15000;
+========================================================================================
+	 
+Subqueries-A query written inside another query.
+It is also known as inner query or nested query.
+Subquery is always written in parenthesis.
+
+Syntax-Select * from table_name where column_name Operator(select */column_name from table_name condition);
+                   outer query                                          inner query
+
+Note-First inner query will execute and the result of it will be input for the outer query which gives the final result set.
+
+On the basis of operator subquery is divided in to 2 types:
+1.Single Row Subquery
+2.Multi Row Subquery
+
+1.Single Row Subquery
+Single row subquery must and should return a single record/whenever we inner query is executed it gives single record.
+Syntax-Select *	/column_name from table_name where column_name Operator(select */column_name from table_name where expr1=value);
+Note-If in place of operator their is comparison or relational operator then it is called sigle row subquery.
+
+2.Multi Row Subquery
+Multi row subquery returns more than 1 record.
+Syntax-Select */column_name from table_name where column_name Operator(select */column_name from table_name where expr1=value);
+Note-If in place of operator their is operator like IN,ALL or ANY then it is multi row subquery.
+
+Q.69)W.A.Q to display name of all employee who where hired after shivangi.
+Query -->select ename from employee 
+         where hiredate>(select hiredate from employee where ename='shivangi');
+
+Q.70)W.A.Q to dispaly name of all the employee who is working for research dept.
+Query -->select ename from employee
+         where deptno=(select deptno from department_info where dname='research');
+
+Q.71)W.A.Q to display name of the employee whose working in location which has atleast 1 'a'.
+Query -->select ename from employee
+         where deptno IN(select deptno from department_info where location like '%a%');
+		 
+Q.72)W.A.Q to diplay second maximum salary.
+Query -->select max(salary) from employee 
+         where salary<(select max(salary) from employee);
+
+Q.73)W.A.Q to display dept name which has atleast 2 clerks.
+Query -->select dname from department_info 
+         where deptno in (select deptno from employee 
+		 where designation='clerk' group by deptno having count(*)>=2);
+
+Q.74)W.A.Q to display 3rd max salary.
+Query -->select max(salary) from employee 
+         where salary<(select max(salary) from employee 
+		 where salary<(select max(salary) from employee));
+
+Q.75)W.A.Q to display the name of employee whose hire date is before akshay and salary greater than shivangi.
+Query -->select ename from employee 
+         where hiredate<(select hiredate from employee where ename='akshay')
+		 and salary>(select salary from employee where ename='shivangi');
+		 
+Joins-It is used to fetch the data from two or more tables at the same time.
+Types of joins
+1.Cross join
+2.Inner join
+3.Outer join
+4.Self join
+5.Natural join
+
+NOTE-There should be atleast two table for the join.
+1.Cross join-Also known as cartesian join.
+A cross join will merge the record from the left/first table with each and every record of right/second table.
+
+
+      T1                           T2
+   A1   B1                      A2   B2
+   A    10                      D    300
+   B    20                      E    100
+   C    30                      F    200
+   
+   T1 CROSS JOIN T2
+   A1      B1     A2     B2
+   A       10     D      300
+   A       10     E      100
+   A       10     F      200
+   B       20     D      300
+   B       20     E      100
+   B       20     F      200
+   C       30     D      300
+   C       30     E      100
+   C       30     F      200
+   
+Formula to know how many rows =No of rows in T1 * No of row in T2
+                                           m * n
+                                           3 * 3=9rows
+Syntax-Select */column_name from table 1 cross join table 2;
+EX- Select * from employee cross join department_info;
+
+2.Inner join-Whenever we join two tables with the help of join condition then the common record in the two table will be the output.
+We can also say inner join is subset of outer join.
+    T1                           T2
+   A1   B1                      A2   B2
+   A    10                      B    300
+   B    20                      C    100
+   C    30                      F    200
+   
+   T1.A1=T2.A2
+   A1     B1     A2      B2
+   B      20     B       300
+   C      30     C       100
+   
+Syntax-Select */column_name from table 1 inner join table 2 on join condition;
+EX- Select * from employee e inner join department_info d on e.deptno=d.deptno;
+
+
+Q.76)W.A.Q to display dname location of all the employee whose salary is greater or equal to 40000.
+Query -->select dname,location from employee e inner join department_info d on e.deptno=d.deptno and salary>25000;
+
+Q.77)W.A.Q to display ename and all the detail of dept if employee where hired after 2015 and working in delhi or banglore. 
+Query -->select ename from employee e inner join department_info d on e.deptno=d.deptno and hiredate>'2015-12-31' and location in('delhi','bangalore');
+
+Q.78)W.A.Q to display ename,dname if the ename starts with 's' or 't' and their dname has atleast 1 'e' in it.
+Query -->select ename,dname from employee e inner join department_info d on e,deptno=d.deptno and ename like 'S%' or ename like 'T%' and dname like '%e%';
+
+3.Outer join-when we want unmatched records in the table.
+Its further divided into 3
+a.Left outer join
+b.Right outer join
+c.Full outer join
+
+a.Left outer join= It gives the inner join plus unmatched record present in the left table.
+Syntax-Select */column_name from table 1 left join table 2 on join condition(t1.a1=t2.a2);
+     
+	 T1(left table)                T2(right table)
+   A1   B1                      A2   B2
+   A    10                      B    300
+   B    20                      C    100
+   C    30                      F    200
+   
+   LOJ-T1.A1=T2.A2
+   A1        B1         A1         B2
+   B         20         B          300
+   C         30         C          100
+   A         10         NULL       NULL
+   
+b.Right outer join= It gives the inner join plus unmatched record present in the right table.
+Syntax-Select */column_name from table 1 right join table 2 on join condition(t1.a1=t2.a2);
+  
+	 T1(left table)                T2(right table)
+   A1   B1                      A2   B2
+   A    10                      B    300
+   B    20                      C    100
+   C    30                      D    200
+   
+   ROJ-T1.A1=T2.A2
+   A1        B1         A1         B2
+   B         20         B          300
+   C         30         C          100
+   NULL      NULL       D          200
+   
+c.Full outer join=It is combination of inner join,left outer join and right outer join.
+OR it gives inner join plus the unmatched record in both the table.
+
+Syntax-Select */column_name from table1 full join table2 on condition(T1.A1=T2.A2);
+
+Q.79)W.A.Q to obtain dname which do not have employee working in it.
+Query -->select dname from employee e right join department_info d on e.deptno=d.deptno where e.deptno is null;
+
+Q.80)W.A.Q to obtain ename who is not working for any dept.
+Query -->select ename from employee e left join department_info d on e.deptno=d.deptno where d.deptno is null;
+
+4.Natural join-It gives inner join when their is common record present in the table.If not then it gives the cross join.
+Syntax-Select */column_name from table1 natural join table2.
+
+Note=We don't give any condition in natural join.
+
+5.Self join-Merging of same table.
+It is used to find the particular value in the table we use self join.
+We use alias for the self join.
+Syntax-Select */column_name from table1 t1 join table2 t2 on condition;
+
+Truncate-If we want to delete all the record permanently from the table.
+It will delete the record not the structure.
+We do not use any condition in truncate.
+
+Syntax-truncate table table_name;
+
+NOTE-All the DDL command are auto commit.
+
+Assignment-Find the diff between drop,truncate and delete.
+
+Single Row Function
+1.Character Single Row Function:
+ a.Case
+ b.Character
+ 
+ a.Case
+ i)upper()-when we want to convert all in uppercase we use upper().
+ Syntax-select upper(column_name) from table_name;
+ Ex-select upper(ename) from employee;
+ 
+ ii)lower()-when we want to convert all in lowercase we use lower().
+ Syntax-select lower(column_name) from table_name;
+ Ex-select lower(ename) from employee;
+ 
+ iii)initcap()-Only first letter in upper rest all lower.
+ Syntax-select initcap(column_name) from table_name;
+ Ex-select initcap(ename) from employee;
+ 
+ b.Character
+ i)length()- select length(ename) from employee;
+ ii)concat()
+ iii)reverse()
+ iv)replace()
+ v)substr()
+ vi)instr()
+ vii)trim()
+
+
+==========================================================================================
+29-may-2020
+
+single row function:
+
+round:idexcel1=# select abs(-122);
+ abs
+-----
+ 122
+(1 row)
+
+
+
+round:
+case1:
+idexcel1=# select round(6482.45);
+ round
+-------
+  6482
+(1 row)
+
+
+
+idexcel1=# select round(6482.55);
+ round
+-------
+  6483
+(1 row)
+
+
+
+case2:
+      ^
+idexcel1=# select  round(6783.65593584,2);
+  round
+---------
+ 6783.66
+(1 row)
+
+
+idexcel1=# select  round(6783.65593584,3);
+  round
+----------
+ 6783.656
+(1 row)
+
+
+idexcel1=# select  round(6783.65493584,3);
+  round
+----------
+ 6783.655
+(1 row)
+
+
+case3:
+
+idexcel1=# select round(6482.65563,-1);
+ round
+-------
+  6480
+(1 row)
+
+
+idexcel1=# select round(6482.655363,-3);
+ round
+-------
+  6000
+
+
+TRUNC: it will go for lower value
+
+idexcel=# select trunc(67337.89383);
+ trunc
+-------
+ 67337
+(1 row)
+
+ date format:
+idexcel=# select current_date;
+ current_date
+--------------
+ 2020-05-29
+
+
+time format:
+idexcel=# select current_time;
+     current_time
+-----------------------
+ 13:04:03.293929+05:30
+(1 row)
+
+date and time:
+idexcel=# select clock_timestamp();
+         clock_timestamp
+----------------------------------
+ 2020-05-29 13:04:56.287222+05:30
+
+
+age calculation:
+idexcel1=# select age(timestamp '2020-05-29',timestamp '1994-12-10');
+           age
+-------------------------
+ 25 years 5 mons 19 days
+(1 row)
+
+
+idexcel1=# select age(timestamp '2020-05-29',timestamp '1998-07-08');
+           age
+--------------------------
+ 21 years 10 mons 21 days
+
+ finding century:
+idexcel1=# select extract(century from timestamp '2000-12-15');
+ date_part
+-----------
+        20
+(1 row)
+
+
+idexcel1=# select extract(century from timestamp '2020-12-15');
+ date_part
+-----------
+        21
+
+
+decade:
+
+
+idexcel1=# select extract(decade from timestamp '2000-12-15');
+ date_part
+-----------
+       200
+(1 row)
+
+day:
+idexcel1=# select extract(day from timestamp '2000-12-15');
+ date_part
+-----------
+        15
+(1 row)
+
+week:
+day of the week
+idexcel1=# select extract(dow from timestamp '2020-12-29');
+ date_part
+-----------
+         2
+
+day of the year:
+
+idexcel1=# select extract(doy from timestamp '2020-5-29');
+ date_part
+-----------   
+    150
+
+
+ week of the year:
+idexcel1=# select extract(week from timestamp '2020-5-29');
+ date_part
+-----------
+        22
+
+checking month:
+
+idexcel1=# select extract(month from timestamp '2020-5-29');
+ date_part
+-----------
+         5
+
+extracting hour:
+
+idexcel1=# select extract(hour from timestamp '2020-5-29 13:13:23');
+ date_part
+-----------
+        13
+
+
+another way of finding date and time:
+
+idexcel1=# select now()::time;
+       now
+-----------------
+ 13:29:36.324222
+(1 row)
+
+
+idexcel1=# select now()::date;
+    now
+------------
+ 2020-05-29
+(1 row)
+
+
+idexcel1=# select now();
+               now
+----------------------------------
+ 2020-05-29 13:30:12.469485+05:30
+(1 row)
+========================================================================================
+tcl=transaction control language
+
+transaction=is a unit of work that is performed against a database
+
+proprties:
+1.acid
+2.atomicity
+3.consistency
+4.isolation
+5.durability
+
+tcl is used with dml cpmmands
+
+tcl types:
+rollback
+commit
+savepoint
+
+
+========================================================================
+
+key attribute:
+which help us to uniquly identify table records
+
+non-key attribute:
+which is helps to non-uniqly identify table records;
+
+prime-key attribute:
+is the key attribute uniqly record defined identify from the record
+
+non-prime attribute:
+is the key attribute non-uniqly record defined identify from the record
+
+composite:
+combination of two attribute which are uniquly define record is calld composite key
+
+super key:
+the set of all the key attribute of an entity is known as super key
+
+========================================================
+
+functional dependency:it is the reationship between attribute of the table  dependent on each other which help data retrive;
+
+
+abcd 
+a is dependent on every attribute;
+dependency: someone is depending on something
+
+types of functional dependency:
+called as "tfd"
+
+if all the attribute of a relation a determined by a key attribute 
+where a i key attribute
+
+
+partial fd:
+a relation said is to have partial dependency;
+r---[a,b,c,d]
+[a,b]--[c]
+[a]--[d]
+
+transitive fd:
+it is a relation is set have transitive function their set of realtion exist such that non-key  attribute detemine by key attribute which intern detrmine by key attribute;
+or
+ a relation is said to have an transitive 
+
+r---->[a,b,c,d]
+
+where a is key attribute
+
+a--->b
+a---->c
+d--->c
+a--->c
+
+
+ R--->{x,y}
+
+
+normalization:
+the process of reducing the table into its normal form is known as normalisation;
+
+normal form: a state of table without dependency and redudency:
+
+the process of reducin
+
+
+
+views:
+
+idexcel1=#
+idexcel1=# create view display
+idexcel1-# as
+idexcel1-# select * from employe where deptno=20;
+CREATE VIEW
+
+
+
+idexcel1=# select * from display;
+ empid | ename | designation |  hiredate  |  sal  | age |      emailid       | d
+eptno | mobileno
+-------+-------+-------------+------------+-------+-----+--------------------+--
+------+----------
+     2 | smith | tester      | 2019-06-13 | 25000 |  26 | smith123@gmail.com |
+   20 | 80545556
+(1 row)
+
+                                                             ^
+idexcel1=# insert into display values(101,'ganesh','job','2012-12-13',22000,28,'
+gan@gmail.com',30,522525855);
+INSERT 0 1
+idexcel1=# select * from display;
+ empid | ename | designation |  hiredate  |  sal  | age |      emailid       | d
+eptno | mobileno
+-------+-------+-------------+------------+-------+-----+--------------------+--
+------+----------
+     2 | smith | tester      | 2019-06-13 | 25000 |  26 | smith123@gmail.com |
+   20 | 80545556
+(1 row)
+
