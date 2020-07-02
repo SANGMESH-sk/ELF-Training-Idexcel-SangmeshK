@@ -1,0 +1,212 @@
+1.bitwise operator
+function bitwiseAND(n1, n2) {
+  return n1&n2;
+}
+
+function bitwiseOR(n1, n2) {
+  return n1|n2;
+}
+
+function bitwiseXOR(n1, n2) {
+  return n1^n2;
+}
+
+2.highest digit
+
+const highestDigit = number => {
+  let high = number.toString().split("")
+	return Math.max(...high)
+};
+
+3.matchstick houses
+
+function matchHouses(step) {
+	return step === 0 ? 0 : 5 * step + 1;
+}
+
+4.add up the number from a single number
+
+function addUp(num) {
+  return (num * (num + 1))/2;
+}
+
+5.orthogonal vector
+
+function isOrthogonal(arr1, arr2) {
+	return !arr1.reduce((t,c,i)=> t+c*arr2[i],0)
+}
+
+6.factorial of a positive integer
+
+function factorial(z) {
+	return z ? (z * factorial(z - 1)) : 1
+}
+
+7.return the factorial
+
+function factorial(int) {
+ if(int < 1) {
+   return 1;
+ } else {
+   return int * factorial(int-1);
+ }
+}
+
+8.absolute sum
+
+function getAbsSum(arr){
+  return arr.reduce((count, num) => count + Math.abs(num), 0)
+}
+
+9.sum of cubes
+const sumOfCubes = nums => {
+	return nums.reduce((sum, num) => {
+		return sum + Math.pow(num,3);
+	},0)
+}
+
+10.return the highest and lowest number
+function highLow(str) {
+  var nums = str.split(' ');
+  return `${Math.max(...nums)} ${Math.min(...nums)}`;
+}
+
+
+=============================medium==============================
+
+1.triangular number sequence
+
+function triangle(n) {
+	return n * (n + 1) / 2;
+}
+
+2.convenience store
+
+function changeEnough(change, amountDue) {
+	let sum = change[0]*0.25 + change[1]*0.1 + change[2]*0.05 + change[3]*0.01;
+	return sum >= amountDue;
+}
+
+3.even or odd number of factors
+
+const factorGroup = num => Number.isInteger(Math.sqrt(num)) ? 'odd' : 'even';
+
+4.basic calculator
+
+function calculator(num1,operator,num2) {
+	return {
+		'+': num1 + num2,
+		'-': num1 - num2,
+		'*': num1 * num2,
+		'/': num2 ? num1 / num2 : 'Cannot divide by 0!'
+	}[operator]
+}
+
+5.doubled pay
+
+function doubledPay(n){
+	return 2 ** n - 1;
+}
+
+6.volume of a cone
+let coneVolume=(h,r) => Number(((Math.PI * r * r * h)/3).toFixed(2));
+
+7.reverse the number
+
+function rev(n) {
+	return Math.abs(n).toString().split('').reverse().join('')
+}
+
+8.find the mean of all digit
+
+function mean(num) {
+	let s=String(Math.abs(num)).split('');
+	return s.reduce((x,y)=>x+Number(y),0)/s.length;
+}
+
+9.return the middle character of a number
+
+function getMiddle(str) {
+  var start = Math.ceil(str.length / 2) - 1;
+  var end = Math.floor(str.length / 2) + 1;
+  return str.substring(start, end);
+}
+
+10.find the missing number
+
+function missingNum(arr) {
+  var sum = arr.reduce((a, b) => a + b, 0);
+  return 55 - sum;
+}
+
+11.factorize of a number
+function factorize(num) {
+	return Array(num).fill('')
+		.map((_,i) => i+1)
+		.filter(n => !(num % n))
+}
+
+12.check for anagrams
+
+function isAnagram(s1, s2) {
+  var str1 = s1.toLowerCase().split('').sort().join('').trim();
+  var str2 = s2.toLowerCase().split('').sort().join('').trim();
+  return str1===str2;
+}
+
+13.CHECK IF lines are parallel
+
+function linesAreParallel(l1, l2) {
+	return l1[0]*l2[1] == l1[1]*l2[0];
+}
+
+14.return the some of two smallest number
+
+function linesAreParallel(l1, l2) {
+	return l1[0]*l2[1] == l1[1]*l2[0];
+}
+
+15.neatly formatted math
+const formatMath = expr => `${expr} = ${eval(expr.replace("x", "*"))}`;
+
+16.sastry numbers
+
+ans:const isSastry = n => !(Math.sqrt(+`${n}${n+1}`) % 1);
+
+17.square every digit
+
+function squareDigits(n) {
+	return +[...String(n)].map(x => x*x).join('');
+}
+
+18.halve and halve again
+
+function squareDigits(n) {
+	return +[...String(n)].map(x => x*x).join('');
+}
+
+19.make a circle with oop
+
+class Circle {
+  constructor (radius) {
+    this.radius = radius;
+  }
+
+  getArea() {
+    return Math.PI * Math.pow(this.radius, 2);
+  }
+
+  getPerimeter() {
+    return 2 * Math.PI * this.radius;
+  }
+}
+
+20.solving expontial with logarithems
+
+const solveForExp = (a, b) => {
+  let count = 0
+	while (a ** count !== b) count++
+	return count
+}
+
+
