@@ -1,0 +1,93 @@
+body{
+    font-family:sans-serif;
+}
+.container{
+    width: 50%;
+    overflow:hidden;
+    margin: auto;
+} 
+a{
+    text-decoration: none;
+}
+header{
+    background-color:#4267B2;;
+    color: white;
+    height: 95px;
+}
+header h1{
+  float: left;
+  font-family: sans-serif;
+  margin-top: 30px;
+  margin-left: 90px;
+  font-size: 50px;
+} 
+.right{
+    float: right; 
+}
+
+.right table td input[type="text"]{
+    margin-right: 15px;
+    padding-left: 30px;
+}
+.right table td a{
+    
+    text-decoration: none;
+}
+.right table td a button{
+    background-color:#365899;
+    color: white;
+    padding: 3px 8px;
+    text-decoration: none;
+    border: 1px solid#365899;
+    margin-left: 8px; 
+}
+section{
+    background-color: #E9EBEE;
+    background-size: cover;
+}
+section .connect{
+    font-weight: bold;
+    word-spacing: 0.2em;
+    float: left;
+    margin-top: 15px;
+}
+section .create{
+    float: right;
+    width: 40%;
+}
+
+.create h1{
+    font-size: 35px;
+}
+.create h4{
+    margin-bottom: 20px;
+}
+.create input{
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 3px;
+    border: 0.5px solid grey;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+.create .set{
+    width: 84%;
+}
+.create .gender{
+    height: auto;
+}
+.create button{
+padding: 10px 90px;
+background-color: #5D9149;
+color: white;
+border: none;
+border-radius: 7px;
+font-size: 20px;
+} 
+label{
+ display: block;
+ padding-top: 5px;
+ font-weight: bold;
+ color: gray;
+}
